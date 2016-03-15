@@ -1,7 +1,7 @@
 # ife-2016-spring
 百度ife前端技术学院——前端利刃团队任务仓库
 
-团队人员签到：
+#### 团队人员签到：
 
-刘水生  gitHub: adleyliu
-李 冰   gitHub: yrok
+刘水生  GitHub: adleyliu  
+李冰   GitHub: yrok
