@@ -40,6 +40,7 @@ var arrStyleClass = ['one', 'two', 'three'];
   var oAqiList = document.getElementById('aqi-list');
   var sHtml = '';
   var goodCityList = getGoodCity(aqiData);
+  
   goodCityList.sort(function(a,b){ //排序，空气质量高的城市排在前面
     return b[1] - a[1];
   })
