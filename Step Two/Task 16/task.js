@@ -69,8 +69,8 @@ function addAqiData() {
   /** boolen，方便后面判断 */
   var valKey = removeSpace(valData.value).match(valReg);
   var cityKey = removeSpace(cityData.value).match(cityReg);
-  /** aqidata赋值 */
-  if (cityKey && valKey) {
+  /** @description aqidata赋值,满足正则表达式且不为空 */
+  if ((cityKey && valKey) && (valData.value && cityData.value)) {
     aqiData[removeSpace(cityData.value)] = removeSpace(valData.value);
   }
 }
@@ -85,7 +85,7 @@ function addAqiData() {
 function renderAqiList() {
   var valKey = removeSpace(valData.value).match(valReg);
   var cityKey = removeSpace(cityData.value).match(cityReg);
-  var key = valKey && cityKey;
+  var key = ((valKey && cityKey) && (cityData.value && valData.value));
   var html = "<thead><tr><td>城市</td><td>空气质量</td><td>操作</td></tr></thead>";
   if (key) {
     for (var variable in aqiData) {

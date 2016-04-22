@@ -4,17 +4,39 @@
     <meta charset="utf-8">
     <title>IFE JavaScript Task 16</title>
     <style>
-      body div {
+      div,td,tr,button,label,input {
+        margin: 0;padding: 0;
+      }
+      button {
+        width: 50px;
+        height: 10px;
+      }
+      body div,table {
         display: table;
         margin: 0 auto;
       }
-      body div label,button {
-        margin: 20px;
-        width: 90px;
+      #aqi-table tr td{
+        text-align: center;
+        width: 80px;
+      }
+      body div label{
+        width: 80px;
         height: auto;
+        margin: 30px 0;
+      }
+      #add-btn {
+        width: 80px;
+        height: 25px;
       }
       body div label input{
         border-radius: 3px;
+      }
+
+      input {
+        float: right;
+      }
+      body div {
+        margin-top: 100px;
       }
     </style>
   </head>
