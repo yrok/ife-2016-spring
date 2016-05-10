@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ife-baidu-tash18</title>
+  <style>
+    div,
+    span {
+      margin: 0;
+      padding: 0;
+    }
+
+    body div {
+      width: 100%;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    div input,
+    button {
+      display: inline-block;
+    }
+
+    .leftOut {
+      margin-left: 30px;
+    }
+
+    #textOutput div {
+      background-color: red;
+    }
+
+    span {
+      border-radius: 1px;
+      background-color: rgba(255, 123, 15, 1);;
+      margin: 2px;
+      padding: 1px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <!-- 操作arr -->
+    <label for="strInput">请输入:</label>
+    <input name="strInput" id="strInput">
+    <p>方法：更新arr方法</p>
+    <button id="left-in-arr">左侧入</button>
+    <button id="right-in-arr">右侧入</button>
+    <button id="left-out-arr">左侧出</button>
+    <button id="right-out-arr">右侧出</button>
+    <!-- 操作节点 -->
+    <p>方法：操作节点</p>
+    <button id="left-in-node">左侧入</button>
+    <button id="right-in-node">右侧入</button>
+    <button id="left-out-node">左侧出</button>
+    <button id="right-out-node">右侧出</button>
+  </div>
+  <div id="textOutput">
+    <!-- output arr here -->
+  </div>
+  <script>
+    /* @descript
+     * @param {}
+     */
+    var arr = [];
+    var strInput = document.getElementById("strInput");
+    var textOpt = document.getElementById("textOutput");
+    var numReg = /^[0-9]*$/g;
+    var spaceReg = / |　/g; // 去除空格全角/半角
+
+    var leftInArr = document.getElementById("left-in-arr");
+    var rightInArr = document.getElementById("right-in-arr");
+    var leftOutArr = document.getElementById("left-out-arr");
+    var rightOutArr = document.getElementById("right-out-arr");
+
+    var leftInNode = document.getElementById("left-in-node");
+    var rightInNode = document.getElementById("right-in-node");
+    var leftOutNode = document.getElementById("left-out-node");
+    var rightOutNode = document.getElementById("right-out-node");
+    /*
+     *@descript 去除空格，测试输入是否为数字
+     *@descript 思路，目前有两个方法一个是缓存一个textoutput里面的数组进行编辑，每次更新。
+     *@descript 第二个就是直接操作textoutput里面的元素。这个是直接操作dom，如果是unshift，
+     *@descript 那就是appendchild,如果是删除，那就是删除子节点。so it is clear。
+     */
+    function isNumber(string) {
+      /** 去除首位和内部空格（全角和半角）*/
+      var str = string.trim().replace(spaceReg, "");
+      if (!str || !str.match(numReg)) {
+        alert("请输入数字！");
+      } else {
+        return str;
+      }
+    }
+    /** common */
+    function clean() {
+      strInput.value = "";
+    }
+    /** event */
+    function addEvent(element, eventType, fn, useCapture) {
+      if (element.addEventListener) {
+        element.addEventListener(eventType, fn, useCapture);
+      }else if (element.attachEvent) {
+        element.attachEvent("on"+eventType, fn);
+      }else {
+        return element["on" + eventType] = fn;
+      }
+    }
+
+    /** Arr */
+    /*
+     *@descript render
+     */
+    function render() {
+      var html = "";
+      for (var i = 0; i < arr.length; i++) {
+        html += "<span>" + arr[i] + "</span>";
+      }
+      textOpt.innerHTML = html;
+    }
+    leftInArr.onclick = function() {
+      var str = isNumber(strInput.value);
+      arr.unshift(str);
+      render();
+    }
+    rightInArr.onclick = function() {
+      var str = isNumber(strInput.value);
+      arr.push(str);
+      render();
+    }
+    leftOutArr.onclick = function() {
+      arr.shift();
+      render();
+    }
+    rightOutArr.onclick = function() {
+      arr.pop();
+      render();
+    }
+    /** node方法 */
+    leftInNode.onclick = function() {
+      var str = isNumber(strInput.value);
+      var spanNode = document.createElement("SPAN");
+      spanNode.innerText = str;
+      var optNode = textOpt.firstChild;
+      textOpt.insertBefore(spanNode, optNode);
+      clean();
+    }
+    rightInNode.onclick = function() {
+      var str = isNumber(strInput.value);
+      var spanNode = document.createElement("SPAN");
+      spanNode.innerText = str;
+      textOpt.appendChild(spanNode);
+      clean();
+    }
+    leftOutNode.onclick = function() {
+      var nodeLen = textOpt.getElementsByTagName("span").length;
+      if (!nodeLen) {
+        alert("没有数据需要删除");
+      } else {
+        textOpt.removeChild(textOpt.childNodes[0]);
+      }
+    }
+    rightOutNode.onclick = function() {
+      var nodeLen = textOpt.getElementsByTagName("span").length;
+      if (!nodeLen) {
+        alert("没有数据需要删除");
+      } else {
+        textOpt.removeChild(textOpt.lastChild);
+      }
+    }
+    addEvent(textOpt, "click", function(event){
+      if (event.target && event.target.nodeName === "SPAN") {
+        textOpt.removeChild(event.target);
+        /** 更新arr，与node方法合并 */
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i]===event.target.innerText) {
+            arr.splice(i, 1);
+          }
+        }
+        render();
+      }
+    }, false);
+  </script>
+</body>
+
+</html>
