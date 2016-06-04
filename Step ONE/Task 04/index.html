@@ -45,14 +45,18 @@
   var radius= Math.floor((Width > Height?Width:Height) * 0.25 * 0.4);
   var circlePos = Math.floor(radius) * 0.5;
     (function(){
+      /* set main(grey div's width & height)*/
       oMain.style.width = Width * 0.4 +"px";
       oMain.style.height = Height * 0.4 + "px";
+      /* set circles's width & height*/
       for (var i = 0; i < oCircle.length; i++) {
         oCircle[i].style.width = radius + "px";
         oCircle[i].style.height = radius + "px";
       }
+      /* set left-top circle position*/
       oCircle[0].style.left = -circlePos + "px";
       oCircle[0].style.top = -circlePos + "px";
+      /* set right-bottom circle position*/
       oCircle[1].style.right = -circlePos + "px";
       oCircle[1].style.bottom = -circlePos + "px";
     })()
