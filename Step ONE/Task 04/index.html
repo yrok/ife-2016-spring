@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style>
+
+  .main {
+    background-color: grey;
+    position: absolute;/* 这里注意！ */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+  }
+
+  .left-top,
+  .right-bottom {
+    border-radius: 200% 200%;
+    background-color: yellow;
+    position: absolute;
+  }
+</style>
+<body>
+    <div class="main">
+      <div class="left-top circle"></div>
+      <div class="right-bottom circle"></div>
+    </div>
+  <script>
+  var Width = document.body.clientWidth;
+  var Height = document.body.scrollHeight;
+  var oMain = document.getElementsByClassName('main')[0];
+  var oCircle = document.getElementsByClassName('circle');
+  var radius= Math.floor((Width > Height?Width:Height) * 0.25 * 0.4);
+  var circlePos = Math.floor(radius) * 0.5;
+    (function(){
+      oMain.style.width = Width * 0.4 +"px";
+      oMain.style.height = Height * 0.4 + "px";
+      for (var i = 0; i < oCircle.length; i++) {
+        oCircle[i].style.width = radius + "px";
+        oCircle[i].style.height = radius + "px";
+      }
+      oCircle[0].style.left = -circlePos + "px";
+      oCircle[0].style.top = -circlePos + "px";
+      oCircle[1].style.right = -circlePos + "px";
+      oCircle[1].style.bottom = -circlePos + "px";
+    })()
+  </script>
+</body>
+
+</html>
