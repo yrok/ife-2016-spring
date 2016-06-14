@@ -108,16 +108,20 @@ html,body,.g-doc{
 	width: 12px;
 	height: 12px;
 	border-radius: 100% 100%;
-	border: 0.2px solid rgba(170, 170, 170, 1);
-	background: linear-gradient(white, rgb(214, 214, 214), rgb(204, 204, 204));
-
+	border: 0.2px solid #aaaaaa;
+	/*非点击状态下用下面的颜色*/
+	background: #ebebeb;
+	/*background: #f07600;*/
+	cursor: pointer;
 }
 .td-radio-inner {
+	display: none;
 	width: 6px;
 	height: 6px;
 	margin: 3px 3px;
+
 	border-radius: 100% 100%;
-	background: linear-gradient(rgb(240, 180, 200), rgb(240, 118, 30), #f07600);
+	background: white;
 }
 /* bing finish */
 .g-bd table{
