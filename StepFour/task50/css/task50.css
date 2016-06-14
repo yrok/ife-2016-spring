@@ -1,0 +1,181 @@
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
+body{background:#fff;}
+a,a:hover{color:#333;}
+
+/* function */
+.f-cb:after,.f-cbli li:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
+.f-cb,.f-cbli li{zoom:1;}
+.f-ib{display:inline-block;*display:inline;*zoom:1;}
+.f-dn{display:none;}
+.f-db{display:block;}
+.f-fl{float:left;}
+.f-fr{float:right;}
+.f-pr{position:relative;}
+.f-prz{position:relative;zoom:1;}
+.f-oh{overflow:hidden;}
+.f-ff0{font-family:arial,\5b8b\4f53;}
+.f-ff1{font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53;}
+.f-fs1{font-size:12px;}
+.f-fs2{font-size:14px;}
+.f-fwn{font-weight:normal;}
+.f-fwb{font-weight:bold;}
+.f-tal{text-align:left;}
+.f-tac{text-align:center;}
+.f-tar{text-align:right;}
+.f-taj{text-align:justify;text-justify:inter-ideograph;}
+.f-vam,.f-vama *{vertical-align:middle;}
+.f-wsn{word-wrap:normal;white-space:nowrap;}
+.f-pre{overflow:hidden;text-align:left;white-space:pre-wrap;word-wrap:break-word;word-break:break-all;}
+.f-wwb{white-space:normal;word-wrap:break-word;word-break:break-all;}
+.f-ti{overflow:hidden;text-indent:-30000px;}
+.f-ti2{text-indent:2em;}
+.f-lhn{line-height:normal;}
+.f-tdu,.f-tdu:hover{text-decoration:underline;}
+.f-tdn,.f-tdn:hover{text-decoration:none;}
+.f-toe{overflow:hidden;word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;}
+.f-csp{cursor:pointer;}
+.f-csd{cursor:default;}
+.f-csh{cursor:help;}
+.f-csm{cursor:move;}
+.f-usn{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}
+
+/* 问答列表页 */
+html,body,.g-doc{
+	background-color: #efefef;
+	font-family: "微软雅黑";
+}
+/* 怎么让body背景颜色铺满全屏 */
+
+/* g-hd */
+.g-hd{
+	height: 46px;
+	width: 100%;
+	background-color: #ee7419;
+	color: #fff;
+	line-height: 46px;
+}
+/* query sign */
+.g-hd-sign {
+	margin: 11px 4px auto auto;
+	color: #ee7419;
+	font-size: 18px;
+	width: 24px;
+	height: 24px;
+	background-color: white;
+	border-radius: 100% 100%;
+	text-align: center;
+	line-height: 24px;
+	float: left;
+}
+.g-hd h1{
+	font-size: 18px;
+	display: inline-block;
+	margin: 0 83px;
+	padding-left: 28px;
+	/*background: url(../image/question.png) left no-repeat;*/
+}
+/* 背景图片设置不够熟悉 */
+
+.g-hd span{
+	font-size: 14px;
+}
+
+/* g-bd */
+/*
+ * 跨行跨列
+ * 怎么给tbody设置内边距
+ */
+ /* bing start */
+.td-radio-outer {
+	width: 12px;
+	height: 12px;
+	border-radius: 100% 100%;
+	border: 0.2px solid rgba(170, 170, 170, 1);
+	background: linear-gradient(white, rgb(214, 214, 214), rgb(204, 204, 204));
+
+}
+.td-radio-inner {
+	width: 6px;
+	height: 6px;
+	margin: 3px 3px;
+	border-radius: 100% 100%;
+	background: linear-gradient(rgb(240, 180, 200), rgb(240, 118, 30), #f07600);
+}
+/* bing finish */
+.g-bd table{
+    margin: 90px auto;
+    width: 1039px;
+    font-size: 14px;
+    line-height: 55px;
+}
+
+.g-bd table button{
+	width: 65px;
+	height: 21px;
+	background-color: #fff;
+}
+
+.g-bd thead button{
+	width: 95px;
+	height: 25px;
+	background-color: #f07600;
+	color: #fff;
+	margin-left: -190px;
+}
+
+.g-bd table tbody,tfoot{
+	background-color: #fff;
+}
+
+.g-bd tbody tr{
+    border-bottom: 1px solid #cacaca;
+}
+
+.g-bd tbody tr:hover{
+    background-color: #fcf0e5;
+}
+
+.g-bd table tr td:first-child{
+	padding-left: 25px;
+}
+
+.g-bd table .title{
+	width: 375px;
+	padding-left: 32px;
+}
+
+.g-bd table .time{
+	width: 164px;
+}
+
+.g-bd table .state{
+	width: 113px;
+}
+
+.g-bd tfoot td{
+	height: 99px;
+	border-radius: 3px;
+}
+
+.g-bd tbody .operate{
+	padding-left: 57px;
+	width: 314px;
+}
