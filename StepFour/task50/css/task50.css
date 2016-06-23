@@ -1,24 +1,3 @@
-/* reset */
-html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
-header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
-table{border-collapse:collapse;border-spacing:0;}
-caption,th{text-align:left;font-weight:normal;}
-html,body,fieldset,img,iframe,abbr{border:0;}
-i,cite,em,var,address,dfn{font-style:normal;}
-[hidefocus],summary{outline:0;}
-li{list-style:none;}
-h1,h2,h3,h4,h5,h6,small{font-size:100%;}
-sup,sub{font-size:83%;}
-pre,code,kbd,samp{font-family:inherit;}
-q:before,q:after{content:none;}
-textarea{overflow:auto;resize:none;}
-label,summary{cursor:default;}
-a,button{cursor:pointer;}
-h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
-del,ins,u,s,a,a:hover{text-decoration:none;}
-body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
-body{background:#fff;}
-a,a:hover{color:#333;}
 
 /* function */
 .f-cb:after,.f-cbli li:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
@@ -56,11 +35,19 @@ a,a:hover{color:#333;}
 .f-csh{cursor:help;}
 .f-csm{cursor:move;}
 .f-usn{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}
+/* bing insert ,table common style */
+.f-dt{display: table}
+.f-dtc{display: table-cell;padding: 21px 0;}
+.f-dtr{display: table-row;height: 56px;}
+.f-oln{outline:none;}
+
 
 /* 问答列表页 */
 html,body,.g-doc{
 	background-color: #efefef;
 	font-family: "微软雅黑";
+	width: 100%;
+	height: 100%;
 }
 /* 怎么让body背景颜色铺满全屏 */
 
@@ -72,25 +59,13 @@ html,body,.g-doc{
 	color: #fff;
 	line-height: 46px;
 }
-/* query sign */
-.g-hd-sign {
-	margin: 11px 4px auto auto;
-	color: #ee7419;
-	font-size: 18px;
-	width: 24px;
-	height: 24px;
-	background-color: white;
-	border-radius: 100% 100%;
-	text-align: center;
-	line-height: 24px;
-	float: left;
-}
+
 .g-hd h1{
 	font-size: 18px;
 	display: inline-block;
 	margin: 0 83px;
 	padding-left: 28px;
-	/*background: url(../image/question.png) left no-repeat;*/
+	background: url(../image/question.png) left no-repeat;
 }
 /* 背景图片设置不够熟悉 */
 
@@ -100,41 +75,70 @@ html,body,.g-doc{
 
 /* g-bd */
 /*
- * 跨行跨列
- * 怎么给tbody设置内边距
+跨行跨列
+怎么给tbody设置内边距
  */
- /* bing start */
-.td-radio-outer {
-	width: 12px;
-	height: 12px;
-	border-radius: 100% 100%;
-	border: 0.2px solid #aaaaaa;
-	/*非点击状态下用下面的颜色*/
-	background: #ebebeb;
-	/*background: #f07600;*/
-	cursor: pointer;
-}
-.td-radio-inner {
-	display: none;
-	width: 6px;
-	height: 6px;
-	margin: 3px 3px;
+/* bing */
+/*1.pbtvm,2大小双数*/
+ .t-main{
+		 width: 1040px;
+     margin: 90px auto;
+     line-height: 16px;
+		 font-size: 16px;
+		 text-align: center;
+		 background-color: white;
+ }
 
-	border-radius: 100% 100%;
-	background: white;
-}
-/* bing finish */
+
+ .f-dtc {
+	 border: 1px solid rgba(161, 161, 161, 0.2);
+	 border-collapse: collapse;
+ }
+ .outer {	display: inline-block;
+	margin: 0px 10px 0 10px;
+ }
+ .t-operate button {
+	 width: 96px;
+	 height: 24px;
+	 border: 0.2px solid #f07600;
+	 border-radius: 4px 4px;
+	 color: white;
+	 background-color: #f07600;
+	 position: absolute;
+	 top: 17px;
+	 right: 10px;
+ }
+ .t-operate button:hover {
+	 background-color: rgba(240, 138, 0, 1);
+ }
+ .operate button{
+	 margin: auto 2px;
+	 width: 96px;
+	 height: 24px;
+	 border: 0.2px solid #a1a1a1;
+	 border-radius: 4px 4px;
+	 color: black;
+	 background-color: white;
+ }
+ .operate button:hover{
+	 border: 0.2px solid #f07600;
+	 color: white;
+	 background-color: #f07600;
+ }
+/* close */
+
 .g-bd table{
-    margin: 90px auto;
-    width: 1039px;
-    font-size: 14px;
-    line-height: 55px;
+		margin: 90px auto;
+		width: 1039px;
+		font-size: 14px;
+		line-height: 55px;
 }
-
-.g-bd table button{
+.g-bd table button,.promptCon section button{
 	width: 65px;
 	height: 21px;
 	background-color: #fff;
+	border: 1px solid #a1a1a1;
+	border-radius: 2px;
 }
 
 .g-bd thead button{
@@ -182,4 +186,93 @@ html,body,.g-doc{
 .g-bd tbody .operate{
 	padding-left: 57px;
 	width: 314px;
+}
+
+.outer,.addShadow {
+	width: 12px;
+	height: 12px;
+	border-radius: 100% 100%;
+	border: 0.2px solid #aaaaaa;
+	/*非点击状态下用下面的颜色*/
+	background: #ebebeb;
+	/*background: #f07600;*/
+	cursor: pointer;
+}
+
+.addShadow{
+	-webkit-box-shadow:inset 0 0 0 3px #f07600;
+    -moz-box-shadow:inset 0 0 0 3px #f07600;
+    box-shadow:inset 0 0 0 3px #f07600;
+}
+
+
+/* 遮罩层和提示框 */
+
+/* 遮罩层样式 */
+#mask{
+	display: none;
+	background: #000;
+	opacity: 0.50;
+	filter:alpha(opacity:50);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+}
+/*提示框样式*/
+#promot{
+	display: none;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform:translate(-50%, -50%);
+    -moz-transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+    -o-transform:translate(-50%, -50%);
+    top: 50%;
+    z-index: 1001;
+}
+
+#promot .promptCon{
+	width: 364px;
+	height: 186px;
+	background-color: #fff;
+	box-shadow: 1px 1px 2px 1px #333;
+	border-radius: 5px;
+}
+
+.promptCon header{
+	height: 48px;
+	width: 100%;
+	background-color: #f7f7f7;
+	line-height: 48px;
+	position: relative;
+	border-radius: 5px;
+}
+
+.promptCon header h2{
+	font-size: 14px;
+	margin-left: 28px;
+	margin-top: 16px;
+}
+
+.promptCon header #close{
+    position: absolute;
+    right: 21px;
+    top: 0;
+    font-size: 25px;
+    color: #979797;
+    cursor: pointer;
+}
+
+.promptCon section p{
+	margin:27px 0 56px 27px;
+}
+
+#promot .promptCon section button:nth-child(2){
+    margin-left: 102px;
+    margin-right: 8px;
+    background-color: #f07600;
 }

@@ -83,13 +83,14 @@
      *@descript 去除空格，测试输入是否为数字
      *@descript 思路，目前有两个方法一个是缓存一个textoutput里面的数组进行编辑，每次更新。
      *@descript 第二个就是直接操作textoutput里面的元素。这个是直接操作dom，如果是unshift，
-     *@descript 那就是appendchild,如果是删除，那就是删除子节点。so it is clear。
+     *@descript 那就是appendchild,如果是删除，那就是删除子节点。so it is clear。ps.如果是arr={}呢？
      */
     function isNumber(string) {
       /** 去除首位和内部空格（全角和半角）*/
       var str = string.trim().replace(spaceReg, "");
       if (!str || !str.match(numReg)) {
         alert("请输入数字！");
+        return;
       } else {
         return str;
       }
@@ -114,11 +115,13 @@
      *@descript render
      */
     function render() {
-      var html = "";
-      for (var i = 0; i < arr.length; i++) {
-        html += "<span>" + arr[i] + "</span>";
+      if (!str || !str.match(numReg)) {
+        var html = "";
+        for (var i = 0; i < arr.length; i++) {
+          html += "<span>" + arr[i] + "</span>";
+        }
+        textOpt.innerHTML = html;
       }
-      textOpt.innerHTML = html;
     }
     leftInArr.onclick = function() {
       var str = isNumber(strInput.value);

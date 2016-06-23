@@ -6,17 +6,65 @@
 <meta name="keywords" content=""/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width"/>
+<link rel="stylesheet" href="../reset.css">
 <link rel="stylesheet" href="css/task50.css"/>
 <link rel="shortcut icon" href="img/favicon.ico"/>
 <link rel="apple-touch-icon" href="img/touchicon.png"/>
 </head>
 <body>
+    <!-- 问卷列表页 -->
 	<div class="g-doc">
 	    <div class="g-hd">
-	        <h1><div class="g-hd-sign">?</div>问卷管理</h1>
+	        <h1>问卷管理</h1>
 	        <span>我的问卷</span>
 	    </div>
-	    <div class="g-bd">
+
+			<!-- bing begin -->
+			<div class="t-main f-dt">
+				<div class="t-title f-dtr f-fwb">
+					<div class="f-dtc">标题</div>
+					<div class="f-dtc">时间</div>
+					<div class="f-dtc">状态</div>
+					<div class="t-operate f-dtc f-pr">
+						<span>操作</span>
+						<button class="f-csp f-oln">+新建问卷</button>
+					</div>
+				</div>
+				<div class="f-dtr">
+					<div class="title f-dtc f-tal">
+						<div class="outer"></div>
+						这是我的第一份问卷
+					</div>
+					<div class="time f-dtc">2016-04-12 20:46:52</div>
+					<div class="state f-dtc">发布中</div>
+					<div class="operate f-dtc">
+						<button class="f-csp f-oln">编辑</button>
+						<button class="f-csp f-oln">删除</button>
+						<button class="f-csp f-oln">查看数据</button>
+					</div>
+				</div><div class="f-dtr">
+					<div class="title f-dtc f-tal"><div class="outer"></div>这是我的第一份问卷</div>
+					<div class="time f-dtc">2016-04-12 20:46:52</div>
+					<div class="state f-dtc">发布中</div>
+					<div class="operate f-dtc">
+						<button class="f-csp f-oln">编辑</button>
+						<button class="f-csp f-oln">删除</button>
+						<button class="f-csp f-oln">查看数据</button>
+					</div>
+				</div><div class="f-dtr">
+					<div class="title f-dtc f-tal"><div class="outer"></div>这是我的第一份问卷</div>
+					<div class="time f-dtc">2016-04-12 20:46:52</div>
+					<div class="state f-dtc">发布中</div>
+					<div class="operate f-dtc">
+						<button class="f-csp f-oln">编辑</button>
+						<button class="f-csp f-oln">删除</button>
+						<button class="f-csp f-oln">查看数据</button>
+					</div>
+				</div>
+			</div>
+			<!-- close -->
+
+			<div class="g-bd">
 	        <table>
 	        	<thead>
 	        		<tr>
@@ -33,7 +81,7 @@
 	        	<tfoot>
 	        		<tr class="last">
 	        			<td colspan="5">
-	        				<input type="radio" name="questionnaire" value="" /> 全选
+	        				<input type="checkbox" name="questionnaire" value="" /> 全选
                             <button type="button">删除</button>
 	        			</td>
 	        		</tr>
@@ -41,7 +89,9 @@
 	        	<tbody>
 	        		<tr>
 	        			<td>
-	        				<input type="radio" name="questionnaire" value="questionnaire" />
+	        				<!-- <input type="checkbox" name="questionnaire" value="questionnaire" /> -->
+	        				<div class="outer">
+                           </div>
 	        			</td>
 	        			<td class="title">
 	        				这是我的第一份问卷
@@ -60,16 +110,11 @@
 	        		</tr>
 	        		<tr>
 	        			<td>
-	        				<!-- <input type="radio" name="questionnaire" value="questionnaire" /> -->
-									<div class="td-radio-outer">
-										<!-- 224 170 -->
-										<div class="td-radio-inner">
-											<!-- radio -->
-										</div>
-									</div>
+	        				<div class="outer">
+                           </div>
 	        			</td>
 	        			<td class="title">
-	        				这是我的第二份问卷
+	        				这是我的第一份问卷
 	        			</td>
 	        			<td class="time">
 	        				2016-04-12 20:46:52
@@ -85,10 +130,11 @@
 	        		</tr>
 	        		<tr>
 	        			<td>
-	        				<input type="radio" name="questionnaire" value="questionnaire" />
+	        				<div class="outer">
+                           </div>
 	        			</td>
 	        			<td class="title">
-	        				这是我的第三份问卷
+	        				这是我的第一份问卷
 	        			</td>
 	        			<td class="time">
 	        				2016-04-12 20:46:52
@@ -107,6 +153,26 @@
 	        </table>
 	    </div>
 	</div>
-	<script src="./js/task50.js"></script>
+	<!-- 删除问卷浮框页 -->
+	<div id="mask">
+	遮罩层
+    </div>
+
+    <div id="promot">
+		<div class="promptCon">
+		    <header>
+		        <h2>提示</h2>
+				<div id="close">×</div>
+			</header>
+			<section>
+				<p>确认要删除此问卷？</p>
+				<button type="button">确定</button>
+				<button type="button">取消</button>
+			</section>
+		</div>
+    </div>
+
+
+    <script src="js/task50.js"></script>
 </body>
 </html>

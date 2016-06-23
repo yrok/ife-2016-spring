@@ -36,11 +36,11 @@ var arrStyleClass = ['one', 'two', 'three'];
   遍历读取aqiData中各个城市的数据
   将空气质量指数大于60的城市显示到aqi-list的列表中
   */
-  
+
   var oAqiList = document.getElementById('aqi-list');
   var sHtml = '';
   var goodCityList = getGoodCity(aqiData);
-  
+
   goodCityList.sort(function(a,b){ //排序，空气质量高的城市排在前面
     return b[1] - a[1];
   })
@@ -50,7 +50,7 @@ var arrStyleClass = ['one', 'two', 'three'];
   }
   oAqiList.innerHTML = sHtml;
 
- 
+
   //找到空气质量大于60的城市
   function getGoodCity(list){
     var arr = [];

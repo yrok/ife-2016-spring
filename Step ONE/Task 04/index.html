@@ -6,22 +6,22 @@
   <title>Document</title>
 </head>
 <style>
+.main {
+  background-color: grey;
+  position: absolute;/* 这里注意！ */
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
+}
 
-  .main {
-    background-color: grey;
-    position: absolute;/* 这里注意！ */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-  }
-
-  .left-top,
-  .right-bottom {
-    border-radius: 200% 200%;
-    background-color: yellow;
-    position: absolute;
-  }
+.left-top,
+.right-bottom {
+  border-radius: 200% 200%;
+  background-color: yellow;
+  position: absolute;
+}
 </style>
 <body>
     <div class="main">
@@ -30,6 +30,13 @@
     </div>
   <script>
   /*
+   *@description 一个用正则，一个用charCodeAt();
+            *匹配中文标点符号：
+            *String str="[\u3002\uff1b\uff0c\uff1a\u201c\u201d\uff08\uff09\u3001\uff1f\u300a\u300b]"
+            *该表达式可以识别出： 。 ；  ， ： “ ”（ ） 、 ？ 《 》 这些标点符号。
+            *匹配中文汉字
+            *String str="[\u4e00-\u9fa5]";
+            *该表达式可以识别出任何汉字。
    *@description 获取当前窗口宽和高，然后设置灰色div属性，然后设置两个小圆的属性
    *@property {object} Width-window width
    *@property {object} Height-window height
@@ -41,7 +48,7 @@
   var Width = document.body.clientWidth;
   var Height = document.body.scrollHeight;
   var oMain = document.getElementsByClassName('main')[0];
-  var oCircle = document.getElementsByClassName('circle');
+  var aCircle = document.getElementsByClassName('circle');
   var radius= Math.floor((Width > Height?Width:Height) * 0.25 * 0.4);
   var circlePos = Math.floor(radius) * 0.5;
     (function(){
@@ -50,15 +57,15 @@
       oMain.style.height = Height * 0.4 + "px";
       /* set circles's width & height*/
       for (var i = 0; i < oCircle.length; i++) {
-        oCircle[i].style.width = radius + "px";
-        oCircle[i].style.height = radius + "px";
+        aCircle[i].style.width = radius + "px";
+        aCircle[i].style.height = radius + "px";
       }
       /* set left-top circle position*/
-      oCircle[0].style.left = -circlePos + "px";
-      oCircle[0].style.top = -circlePos + "px";
+      aCircle[0].style.left = -circlePos + "px";
+      aCircle[0].style.top = -circlePos + "px";
       /* set right-bottom circle position*/
-      oCircle[1].style.right = -circlePos + "px";
-      oCircle[1].style.bottom = -circlePos + "px";
+      aCircle[1].style.right = -circlePos + "px";
+      aCircle[1].style.bottom = -circlePos + "px";
     })()
   </script>
 </body>

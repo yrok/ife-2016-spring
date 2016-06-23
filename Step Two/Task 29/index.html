@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task 29单个表单的校验</title>
+  <style>
+
+    .parent {
+      /*float: left;*/
+      height: 100px;
+      width: 1000px;
+
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .child{
+      display: inline-block;
+    }
+    .verify__span {
+      position: relative;
+      margin: auto 20px;
+    }
+    .verify__input {
+      width: 300px;
+      height: 20px;
+    }
+    .input__text--left {
+      color: grey;
+      position: absolute;;
+      left: 0;
+    }
+    .fl {float: left;}
+    .fr {float: right;}
+  </style>
+</head>
+<body>
+
+  <div class="parent">
+    <div class="child verify">
+      <label for="verify" class="fl">名称</label>
+      <span class="fl verify__span">
+        <input class="verify__input" type="text" name="verify">
+        <br>
+        <span class="input__text--left">必填，长度为4~16个字符</span>
+      </span>
+      <button class="verify__btn fr"type="button" name="verify">验证</button>
+    </div>
+  </div>
+  <script>
+
+  </script>
+</body>
+</html>
